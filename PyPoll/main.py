@@ -12,6 +12,7 @@ with open(ElectionCSV, newline="") as csvfile:
     actualdata = csv.reader(csvfile, delimiter=",")
     
     for row in actualdata:
+
         votes = votes + 1        
 
         if row[2] not in candidates and row[2] not in "Candidate":
@@ -29,7 +30,7 @@ with open(ElectionCSV, newline="") as csvfile:
     results1 = (
         "Election Results" + '\n' + space + '\n' + "Total Votes: "+ str(votes)+ '\n' + space + '\n')
     results2 = (
-        space + '\n'
+        space + '\n' 
         "Winner: "+ str(maxi)+ '\n' + space + '\n')
    
     print(results1)
@@ -41,7 +42,7 @@ with open(ElectionCSV, newline="") as csvfile:
 
     f.write(results1)
     for key, val in vote_percent.items():
-         f.write((key + ": " + val)+ '\n')
+        f.write((key + ": " + val)+ '\n')
     f.write(results2)
     
     f.close()
